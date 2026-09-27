@@ -1,0 +1,2059 @@
+{
+ "title": "Neuromorphic IR Event Sensor - Rev A-C (compact)",
+ "revision": "A-C",
+ "notes": "Neuromorphic IR Event Sensor - Rev A-C (compact, PCBWay-assembled).\n\nSmallest-footprint build of the Rev A spec. Writes compact/design/spec.json for\nkicad-companion's generate_schematic.\n\nChanges vs the SMD spec (docs/DESIGN_SPECIFICATION.md):\n  OPA381 x4 (MSOP)          -> OPA2381AIDRBR x2 (same amplifier, dual, DFN-8 3x3, EP -> V-)\n  TLV3202AIDR (SOIC)        -> TLV3202AIDGKR (VSSOP-8)\n  74LVC1G123 (8x)           -> SN74LVC1G123DCUR (VSSOP-8 2.3x2)\n  REF3312AIDBZR (SOT-23)    -> REF3312AIDCKR (SC70-3)\n  VBPW34FASR                -> ams OSRAM BPW 34 FAS (same DIL-SMT package, daylight filter)\n  One-shot 8.2k / 12nF      -> 100k / 1nF C0G (0201 C0G tops out ~1nF; K=1 -> ~100 us)\n  Passives 0603/1206        -> 0201 (0402 for 0.1% thresholds, 10uF bulk, LED resistor)\n  Debug header + 100R       -> bottom-side test pads (VPHOTO_x directly)\n  LED_EN (no pin in spec)   -> 3-pad solder jumper, default bridged to 3V3 (LED on)\n  2x5 2.54 keyed header     -> 2x5 1.27 mm SMD header (same pinout)",
+ "power_flags": "auto",
+ "parts": [
+  {
+   "ref": "FB1",
+   "lib_id": "Device:FerriteBead",
+   "value": "600R@100MHz",
+   "footprint": "Inductor_SMD:L_0402_1005Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "3V3A"
+   },
+   "fields": {
+    "MPN": "BLM15AG601SN1D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Analog rail filter bead",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C1",
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "footprint": "Capacitor_SMD:C_0402_1005Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM155R60J106ME15D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Analog bulk",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C2",
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "footprint": "Capacitor_SMD:C_0402_1005Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM155R60J106ME15D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Logic bulk",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "U1",
+   "lib_id": "Reference_Voltage:REF3012",
+   "value": "REF3312AIDCKR",
+   "footprint": "Package_TO_SOT_SMD:SOT-323_SC-70",
+   "pins": {
+    "1": "3V3A",
+    "2": "VREF",
+    "3": "GND"
+   },
+   "fields": {
+    "MPN": "REF3312AIDCKR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "1.25 V reference",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C3",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U1 input decoupling",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C4",
+   "lib_id": "Device:C",
+   "value": "1uF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VREF",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R60J105MEA2D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Reference decoupling",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C5",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VREF",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Reference decoupling",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "R1",
+   "lib_id": "Device:R",
+   "value": "499k 0.1%",
+   "footprint": "Resistor_SMD:R_0402_1005Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "VTH_ON"
+   },
+   "fields": {
+    "MPN": "499k 0.1% 0402 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "ON threshold upper",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "R2",
+   "lib_id": "Device:R",
+   "value": "10k 0.1%",
+   "footprint": "Resistor_SMD:R_0402_1005Metric",
+   "pins": {
+    "1": "VTH_ON",
+    "2": "VREF"
+   },
+   "fields": {
+    "MPN": "10k 0.1% 0402 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "ON threshold lower",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "R3",
+   "lib_id": "Device:R",
+   "value": "10k 0.1%",
+   "footprint": "Resistor_SMD:R_0402_1005Metric",
+   "pins": {
+    "1": "VREF",
+    "2": "VTH_OFF"
+   },
+   "fields": {
+    "MPN": "10k 0.1% 0402 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "OFF threshold upper",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "R4",
+   "lib_id": "Device:R",
+   "value": "301k 0.1%",
+   "footprint": "Resistor_SMD:R_0402_1005Metric",
+   "pins": {
+    "1": "VTH_OFF",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "301k 0.1% 0402 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "OFF threshold lower",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C6",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VTH_ON",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Threshold filter",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "C7",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VTH_OFF",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Threshold filter",
+   "dnp": false,
+   "group": "Power & Reference"
+  },
+  {
+   "ref": "D1",
+   "lib_id": "Sensor_Optical:BPW34",
+   "value": "BPW 34 FAS",
+   "footprint": "OptoDevice:Osram_BPW34S-SMD",
+   "pins": {
+    "1": "TIA_IN_TL",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "BPW 34 FAS",
+    "Manufacturer": "ams OSRAM"
+   },
+   "description": "IR photodiode TL (cathode = pad 1, large pad)",
+   "dnp": false,
+   "group": "Photodiodes"
+  },
+  {
+   "ref": "D2",
+   "lib_id": "Sensor_Optical:BPW34",
+   "value": "BPW 34 FAS",
+   "footprint": "OptoDevice:Osram_BPW34S-SMD",
+   "pins": {
+    "1": "TIA_IN_TR",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "BPW 34 FAS",
+    "Manufacturer": "ams OSRAM"
+   },
+   "description": "IR photodiode TR (cathode = pad 1, large pad)",
+   "dnp": false,
+   "group": "Photodiodes"
+  },
+  {
+   "ref": "D3",
+   "lib_id": "Sensor_Optical:BPW34",
+   "value": "BPW 34 FAS",
+   "footprint": "OptoDevice:Osram_BPW34S-SMD",
+   "pins": {
+    "1": "TIA_IN_BL",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "BPW 34 FAS",
+    "Manufacturer": "ams OSRAM"
+   },
+   "description": "IR photodiode BL (cathode = pad 1, large pad)",
+   "dnp": false,
+   "group": "Photodiodes"
+  },
+  {
+   "ref": "D4",
+   "lib_id": "Sensor_Optical:BPW34",
+   "value": "BPW 34 FAS",
+   "footprint": "OptoDevice:Osram_BPW34S-SMD",
+   "pins": {
+    "1": "TIA_IN_BR",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "BPW 34 FAS",
+    "Manufacturer": "ams OSRAM"
+   },
+   "description": "IR photodiode BR (cathode = pad 1, large pad)",
+   "dnp": false,
+   "group": "Photodiodes"
+  },
+  {
+   "ref": "U2",
+   "lib_id": "neuromorphic-ir-sensor-compact:OPA2381_DRB",
+   "value": "OPA2381AIDRBR",
+   "footprint": "Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.65x2.4mm",
+   "pins": {
+    "3": "VREF",
+    "2": "TIA_IN_TL",
+    "1": "VPHOTO_TL",
+    "5": "VREF",
+    "6": "TIA_IN_BL",
+    "7": "VPHOTO_BL",
+    "8": "3V3A",
+    "4": "GND",
+    "9": "GND"
+   },
+   "fields": {
+    "MPN": "OPA2381AIDRBR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "Dual TIA TL/BL",
+   "dnp": false,
+   "group": "TIA"
+  },
+  {
+   "ref": "C8",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U2 decoupling",
+   "dnp": false,
+   "group": "TIA"
+  },
+  {
+   "ref": "U3",
+   "lib_id": "neuromorphic-ir-sensor-compact:OPA2381_DRB",
+   "value": "OPA2381AIDRBR",
+   "footprint": "Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.65x2.4mm",
+   "pins": {
+    "3": "VREF",
+    "2": "TIA_IN_TR",
+    "1": "VPHOTO_TR",
+    "5": "VREF",
+    "6": "TIA_IN_BR",
+    "7": "VPHOTO_BR",
+    "8": "3V3A",
+    "4": "GND",
+    "9": "GND"
+   },
+   "fields": {
+    "MPN": "OPA2381AIDRBR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "Dual TIA TR/BR",
+   "dnp": false,
+   "group": "TIA"
+  },
+  {
+   "ref": "C9",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U3 decoupling",
+   "dnp": false,
+   "group": "TIA"
+  },
+  {
+   "ref": "R5",
+   "lib_id": "Device:R",
+   "value": "18k 0.1%",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_TL",
+    "2": "VPHOTO_TL"
+   },
+   "fields": {
+    "MPN": "18k 0.1% 0201 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "TIA feedback RF",
+   "dnp": false,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "C10",
+   "lib_id": "Device:C",
+   "value": "47pF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_TL",
+    "2": "VPHOTO_TL"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H470JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "TIA feedback CF",
+   "dnp": false,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "C11",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VPHOTO_TL",
+    "2": "VEVENT_TL"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Adaptation CA",
+   "dnp": false,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "R6",
+   "lib_id": "Device:R",
+   "value": "22k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "VEVENT_TL",
+    "2": "VREF"
+   },
+   "fields": {
+    "MPN": "22k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Adaptation RA",
+   "dnp": false,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "R7",
+   "lib_id": "Device:R",
+   "value": "18k 0.1%",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_TR",
+    "2": "VPHOTO_TR"
+   },
+   "fields": {
+    "MPN": "18k 0.1% 0201 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "TIA feedback RF",
+   "dnp": false,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "C12",
+   "lib_id": "Device:C",
+   "value": "47pF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_TR",
+    "2": "VPHOTO_TR"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H470JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "TIA feedback CF",
+   "dnp": false,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "C13",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VPHOTO_TR",
+    "2": "VEVENT_TR"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Adaptation CA",
+   "dnp": false,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "R8",
+   "lib_id": "Device:R",
+   "value": "22k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "VEVENT_TR",
+    "2": "VREF"
+   },
+   "fields": {
+    "MPN": "22k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Adaptation RA",
+   "dnp": false,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "R9",
+   "lib_id": "Device:R",
+   "value": "18k 0.1%",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_BL",
+    "2": "VPHOTO_BL"
+   },
+   "fields": {
+    "MPN": "18k 0.1% 0201 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "TIA feedback RF",
+   "dnp": false,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "C14",
+   "lib_id": "Device:C",
+   "value": "47pF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_BL",
+    "2": "VPHOTO_BL"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H470JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "TIA feedback CF",
+   "dnp": false,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "C15",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VPHOTO_BL",
+    "2": "VEVENT_BL"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Adaptation CA",
+   "dnp": false,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "R10",
+   "lib_id": "Device:R",
+   "value": "22k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "VEVENT_BL",
+    "2": "VREF"
+   },
+   "fields": {
+    "MPN": "22k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Adaptation RA",
+   "dnp": false,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "R11",
+   "lib_id": "Device:R",
+   "value": "18k 0.1%",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_BR",
+    "2": "VPHOTO_BR"
+   },
+   "fields": {
+    "MPN": "18k 0.1% 0201 thin film",
+    "Manufacturer": "Any"
+   },
+   "description": "TIA feedback RF",
+   "dnp": false,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "C16",
+   "lib_id": "Device:C",
+   "value": "47pF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "TIA_IN_BR",
+    "2": "VPHOTO_BR"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H470JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "TIA feedback CF",
+   "dnp": false,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "C17",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "VPHOTO_BR",
+    "2": "VEVENT_BR"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Adaptation CA",
+   "dnp": false,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "R12",
+   "lib_id": "Device:R",
+   "value": "22k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "VEVENT_BR",
+    "2": "VREF"
+   },
+   "fields": {
+    "MPN": "22k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Adaptation RA",
+   "dnp": false,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "U4",
+   "lib_id": "Comparator:MCP6562",
+   "value": "TLV3202AIDGKR",
+   "footprint": "Package_SO:VSSOP-8_3x3mm_P0.65mm",
+   "pins": {
+    "3": "VEVENT_TL",
+    "2": "VTH_ON",
+    "1": "RAW_ON_TL",
+    "5": "VTH_OFF",
+    "6": "VEVENT_TL",
+    "7": "RAW_OFF_TL",
+    "8": "3V3A",
+    "4": "GND"
+   },
+   "fields": {
+    "MPN": "TLV3202AIDGKR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "Dual comparator ON (A) / OFF (B)",
+   "dnp": false,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "C18",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U4 decoupling",
+   "dnp": false,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "R13",
+   "lib_id": "Device:R",
+   "value": "1M",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RAW_ON_TL",
+    "2": "VEVENT_TL"
+   },
+   "fields": {
+    "MPN": "1M 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Optional ON hysteresis (DNP)",
+   "dnp": true,
+   "group": "Channel TL"
+  },
+  {
+   "ref": "U5",
+   "lib_id": "Comparator:MCP6562",
+   "value": "TLV3202AIDGKR",
+   "footprint": "Package_SO:VSSOP-8_3x3mm_P0.65mm",
+   "pins": {
+    "3": "VEVENT_TR",
+    "2": "VTH_ON",
+    "1": "RAW_ON_TR",
+    "5": "VTH_OFF",
+    "6": "VEVENT_TR",
+    "7": "RAW_OFF_TR",
+    "8": "3V3A",
+    "4": "GND"
+   },
+   "fields": {
+    "MPN": "TLV3202AIDGKR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "Dual comparator ON (A) / OFF (B)",
+   "dnp": false,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "C19",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U5 decoupling",
+   "dnp": false,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "R14",
+   "lib_id": "Device:R",
+   "value": "1M",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RAW_ON_TR",
+    "2": "VEVENT_TR"
+   },
+   "fields": {
+    "MPN": "1M 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Optional ON hysteresis (DNP)",
+   "dnp": true,
+   "group": "Channel TR"
+  },
+  {
+   "ref": "U6",
+   "lib_id": "Comparator:MCP6562",
+   "value": "TLV3202AIDGKR",
+   "footprint": "Package_SO:VSSOP-8_3x3mm_P0.65mm",
+   "pins": {
+    "3": "VEVENT_BL",
+    "2": "VTH_ON",
+    "1": "RAW_ON_BL",
+    "5": "VTH_OFF",
+    "6": "VEVENT_BL",
+    "7": "RAW_OFF_BL",
+    "8": "3V3A",
+    "4": "GND"
+   },
+   "fields": {
+    "MPN": "TLV3202AIDGKR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "Dual comparator ON (A) / OFF (B)",
+   "dnp": false,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "C20",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U6 decoupling",
+   "dnp": false,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "R15",
+   "lib_id": "Device:R",
+   "value": "1M",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RAW_ON_BL",
+    "2": "VEVENT_BL"
+   },
+   "fields": {
+    "MPN": "1M 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Optional ON hysteresis (DNP)",
+   "dnp": true,
+   "group": "Channel BL"
+  },
+  {
+   "ref": "U7",
+   "lib_id": "Comparator:MCP6562",
+   "value": "TLV3202AIDGKR",
+   "footprint": "Package_SO:VSSOP-8_3x3mm_P0.65mm",
+   "pins": {
+    "3": "VEVENT_BR",
+    "2": "VTH_ON",
+    "1": "RAW_ON_BR",
+    "5": "VTH_OFF",
+    "6": "VEVENT_BR",
+    "7": "RAW_OFF_BR",
+    "8": "3V3A",
+    "4": "GND"
+   },
+   "fields": {
+    "MPN": "TLV3202AIDGKR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "Dual comparator ON (A) / OFF (B)",
+   "dnp": false,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "C21",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3A",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U7 decoupling",
+   "dnp": false,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "R16",
+   "lib_id": "Device:R",
+   "value": "1M",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RAW_ON_BR",
+    "2": "VEVENT_BR"
+   },
+   "fields": {
+    "MPN": "1M 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Optional ON hysteresis (DNP)",
+   "dnp": true,
+   "group": "Channel BR"
+  },
+  {
+   "ref": "U8",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_ON_TL",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_ON_TL",
+    "6": "CX_ON_TL",
+    "7": "RC_ON_TL",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot ON TL",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "C22",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U8 decoupling",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "C23",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_ON_TL",
+    "2": "RC_ON_TL"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "R17",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_ON_TL",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "R18",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_ON_TL",
+    "2": "SPIKE_ON_TL"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "U9",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_OFF_TL",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_OFF_TL",
+    "6": "CX_OFF_TL",
+    "7": "RC_OFF_TL",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot OFF TL",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "C24",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U9 decoupling",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "C25",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_OFF_TL",
+    "2": "RC_OFF_TL"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "R19",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_OFF_TL",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "R20",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_OFF_TL",
+    "2": "SPIKE_OFF_TL"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot TL"
+  },
+  {
+   "ref": "U10",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_ON_TR",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_ON_TR",
+    "6": "CX_ON_TR",
+    "7": "RC_ON_TR",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot ON TR",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "C26",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U10 decoupling",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "C27",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_ON_TR",
+    "2": "RC_ON_TR"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "R21",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_ON_TR",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "R22",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_ON_TR",
+    "2": "SPIKE_ON_TR"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "U11",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_OFF_TR",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_OFF_TR",
+    "6": "CX_OFF_TR",
+    "7": "RC_OFF_TR",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot OFF TR",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "C28",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U11 decoupling",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "C29",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_OFF_TR",
+    "2": "RC_OFF_TR"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "R23",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_OFF_TR",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "R24",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_OFF_TR",
+    "2": "SPIKE_OFF_TR"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot TR"
+  },
+  {
+   "ref": "U12",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_ON_BL",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_ON_BL",
+    "6": "CX_ON_BL",
+    "7": "RC_ON_BL",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot ON BL",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "C30",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U12 decoupling",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "C31",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_ON_BL",
+    "2": "RC_ON_BL"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "R25",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_ON_BL",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "R26",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_ON_BL",
+    "2": "SPIKE_ON_BL"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "U13",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_OFF_BL",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_OFF_BL",
+    "6": "CX_OFF_BL",
+    "7": "RC_OFF_BL",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot OFF BL",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "C32",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U13 decoupling",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "C33",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_OFF_BL",
+    "2": "RC_OFF_BL"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "R27",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_OFF_BL",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "R28",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_OFF_BL",
+    "2": "SPIKE_OFF_BL"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot BL"
+  },
+  {
+   "ref": "U14",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_ON_BR",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_ON_BR",
+    "6": "CX_ON_BR",
+    "7": "RC_ON_BR",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot ON BR",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "C34",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U14 decoupling",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "C35",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_ON_BR",
+    "2": "RC_ON_BR"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "R29",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_ON_BR",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "R30",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_ON_BR",
+    "2": "SPIKE_ON_BR"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "U15",
+   "lib_id": "74xGxx:74LVC1G123",
+   "value": "SN74LVC1G123DCUR",
+   "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+   "pins": {
+    "1": "GND",
+    "2": "RAW_OFF_BR",
+    "3": "3V3",
+    "4": "GND",
+    "5": "Q_OFF_BR",
+    "6": "CX_OFF_BR",
+    "7": "RC_OFF_BR",
+    "8": "3V3"
+   },
+   "fields": {
+    "MPN": "SN74LVC1G123DCUR",
+    "Manufacturer": "Texas Instruments"
+   },
+   "description": "One-shot OFF BR",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "C36",
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM033R71A104KA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "U15 decoupling",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "C37",
+   "lib_id": "Device:C",
+   "value": "1nF",
+   "footprint": "Capacitor_SMD:C_0201_0603Metric",
+   "pins": {
+    "1": "CX_OFF_BR",
+    "2": "RC_OFF_BR"
+   },
+   "fields": {
+    "MPN": "GRM0335C1H102JA01D",
+    "Manufacturer": "Murata"
+   },
+   "description": "Timing C (C0G)",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "R31",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "RC_OFF_BR",
+    "2": "3V3"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Timing R (~100 us)",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "R32",
+   "lib_id": "Device:R",
+   "value": "150",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_OFF_BR",
+    "2": "SPIKE_OFF_BR"
+   },
+   "fields": {
+    "MPN": "150 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Spike series R",
+   "dnp": false,
+   "group": "One-shot BR"
+  },
+  {
+   "ref": "LED1",
+   "lib_id": "Device:LED",
+   "value": "TSAL6200",
+   "footprint": "LED_THT:LED_D5.0mm_IRGrey",
+   "pins": {
+    "1": "LED_K",
+    "2": "LED_A"
+   },
+   "fields": {
+    "MPN": "TSAL6200",
+    "Manufacturer": "Vishay"
+   },
+   "description": "940 nm IR emitter (spec part; small SMD IR LEDs are far dimmer at 250 mm)",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "R33",
+   "lib_id": "Device:R",
+   "value": "82",
+   "footprint": "Resistor_SMD:R_0402_1005Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "LED_A"
+   },
+   "fields": {
+    "MPN": "82R 0402 1% (62.5 mW)",
+    "Manufacturer": "Any"
+   },
+   "description": "LED current ~22 mA",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "Q1",
+   "lib_id": "Transistor_FET:AO3400A",
+   "value": "AO3400A",
+   "footprint": "Package_TO_SOT_SMD:SOT-23",
+   "pins": {
+    "1": "Q_G",
+    "2": "GND",
+    "3": "LED_K"
+   },
+   "fields": {
+    "MPN": "AO3400A",
+    "Manufacturer": "Alpha & Omega"
+   },
+   "description": "LED low-side switch",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "R34",
+   "lib_id": "Device:R",
+   "value": "100",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "LED_EN",
+    "2": "Q_G"
+   },
+   "fields": {
+    "MPN": "100 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Gate resistor",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "R35",
+   "lib_id": "Device:R",
+   "value": "100k",
+   "footprint": "Resistor_SMD:R_0201_0603Metric",
+   "pins": {
+    "1": "Q_G",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "100k 0201 thick film 1%",
+    "Manufacturer": "Any"
+   },
+   "description": "Gate pulldown",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "C38",
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "footprint": "Capacitor_SMD:C_0402_1005Metric",
+   "pins": {
+    "1": "3V3",
+    "2": "GND"
+   },
+   "fields": {
+    "MPN": "GRM155R60J106ME15D",
+    "Manufacturer": "Murata"
+   },
+   "description": "LED local bulk",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "JP1",
+   "lib_id": "Jumper:SolderJumper_3_Bridged12",
+   "value": "LED_EN",
+   "footprint": "Jumper:SolderJumper-3_P1.3mm_Bridged12_Pad1.0x1.5mm",
+   "pins": {
+    "1": "3V3",
+    "2": "LED_EN",
+    "3": "GND"
+   },
+   "fields": {},
+   "description": "Bridged 1-2 = LED on; cut and bridge 2-3 = off",
+   "dnp": false,
+   "group": "IR illumination"
+  },
+  {
+   "ref": "J1",
+   "lib_id": "Connector_Generic:Conn_02x05_Odd_Even",
+   "value": "FPGA",
+   "footprint": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD",
+   "pins": {
+    "1": "GND",
+    "2": "3V3",
+    "3": "SPIKE_ON_TL",
+    "4": "SPIKE_OFF_TL",
+    "5": "SPIKE_ON_TR",
+    "6": "SPIKE_OFF_TR",
+    "7": "SPIKE_ON_BL",
+    "8": "SPIKE_OFF_BL",
+    "9": "SPIKE_ON_BR",
+    "10": "SPIKE_OFF_BR"
+   },
+   "fields": {
+    "MPN": "2x5 1.27mm SMD pin header, gold",
+    "Manufacturer": "Any"
+   },
+   "description": "2x5 1.27 mm event header (spec pinout)",
+   "dnp": false,
+   "group": "Connectors"
+  },
+  {
+   "ref": "TP1",
+   "lib_id": "Connector:TestPoint",
+   "value": "3V3A",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "3V3A"
+   },
+   "fields": {},
+   "description": "Probe pad 3V3A",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP2",
+   "lib_id": "Connector:TestPoint",
+   "value": "GND",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "GND"
+   },
+   "fields": {},
+   "description": "Probe pad GND",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP3",
+   "lib_id": "Connector:TestPoint",
+   "value": "VREF",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VREF"
+   },
+   "fields": {},
+   "description": "Probe pad VREF",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP4",
+   "lib_id": "Connector:TestPoint",
+   "value": "VTH_ON",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VTH_ON"
+   },
+   "fields": {},
+   "description": "Probe pad VTH_ON",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP5",
+   "lib_id": "Connector:TestPoint",
+   "value": "VTH_OFF",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VTH_OFF"
+   },
+   "fields": {},
+   "description": "Probe pad VTH_OFF",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP6",
+   "lib_id": "Connector:TestPoint",
+   "value": "LED_EN",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "LED_EN"
+   },
+   "fields": {},
+   "description": "Probe pad LED_EN",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP7",
+   "lib_id": "Connector:TestPoint",
+   "value": "VPHOTO_TL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VPHOTO_TL"
+   },
+   "fields": {},
+   "description": "Probe pad VPHOTO_TL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP8",
+   "lib_id": "Connector:TestPoint",
+   "value": "VPHOTO_TR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VPHOTO_TR"
+   },
+   "fields": {},
+   "description": "Probe pad VPHOTO_TR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP9",
+   "lib_id": "Connector:TestPoint",
+   "value": "VPHOTO_BL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VPHOTO_BL"
+   },
+   "fields": {},
+   "description": "Probe pad VPHOTO_BL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP10",
+   "lib_id": "Connector:TestPoint",
+   "value": "VPHOTO_BR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VPHOTO_BR"
+   },
+   "fields": {},
+   "description": "Probe pad VPHOTO_BR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP11",
+   "lib_id": "Connector:TestPoint",
+   "value": "VEVENT_TL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VEVENT_TL"
+   },
+   "fields": {},
+   "description": "Probe pad VEVENT_TL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP12",
+   "lib_id": "Connector:TestPoint",
+   "value": "VEVENT_TR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VEVENT_TR"
+   },
+   "fields": {},
+   "description": "Probe pad VEVENT_TR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP13",
+   "lib_id": "Connector:TestPoint",
+   "value": "VEVENT_BL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VEVENT_BL"
+   },
+   "fields": {},
+   "description": "Probe pad VEVENT_BL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP14",
+   "lib_id": "Connector:TestPoint",
+   "value": "VEVENT_BR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "VEVENT_BR"
+   },
+   "fields": {},
+   "description": "Probe pad VEVENT_BR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP15",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_ON_TL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_ON_TL"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_ON_TL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP16",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_OFF_TL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_OFF_TL"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_OFF_TL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP17",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_ON_TR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_ON_TR"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_ON_TR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP18",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_OFF_TR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_OFF_TR"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_OFF_TR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP19",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_ON_BL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_ON_BL"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_ON_BL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP20",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_OFF_BL",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_OFF_BL"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_OFF_BL",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP21",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_ON_BR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_ON_BR"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_ON_BR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "TP22",
+   "lib_id": "Connector:TestPoint",
+   "value": "RAW_OFF_BR",
+   "footprint": "TestPoint:TestPoint_Pad_D1.0mm",
+   "pins": {
+    "1": "RAW_OFF_BR"
+   },
+   "fields": {},
+   "description": "Probe pad RAW_OFF_BR",
+   "dnp": false,
+   "group": "Test pads"
+  },
+  {
+   "ref": "H1",
+   "lib_id": "Mechanical:MountingHole",
+   "value": "M2",
+   "footprint": "MountingHole:MountingHole_2.2mm_M2",
+   "pins": {},
+   "fields": {},
+   "description": "M12 lens holder screw (L)",
+   "dnp": false,
+   "group": "Mechanical"
+  },
+  {
+   "ref": "H2",
+   "lib_id": "Mechanical:MountingHole",
+   "value": "M2",
+   "footprint": "MountingHole:MountingHole_2.2mm_M2",
+   "pins": {},
+   "fields": {},
+   "description": "M12 lens holder screw (R)",
+   "dnp": false,
+   "group": "Mechanical"
+  }
+ ]
+}

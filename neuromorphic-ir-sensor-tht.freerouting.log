@@ -1,0 +1,18 @@
+2026-09-26 21:01:28.364 INFO   Freerouting v2.3.0 (build-date: 2026-08-07)
+2026-09-26 21:01:29.813 INFO   Opening 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\neuromorphic-ir-sensor-tht.dsn'...
+2026-09-26 21:01:30.370 INFO   New version available: v2.4.1
+2026-09-26 21:01:30.555 INFO   [8CDE67\D478BB] Loading board file 'neuromorphic-ir-sensor-tht.dsn'...
+2026-09-26 21:01:34.471 INFO   [8CDE67\D478BB] Starting routing of 'neuromorphic-ir-sensor-tht' on 1 thread...
+2026-09-26 21:01:34.533 INFO   [8CDE67\D478BB] Fanout stage is enabled but skipped because the board has no SMD pins.
+2026-09-26 21:01:34.543 INFO   [8CDE67\D478BB] Auto-routing stage started on board 'ad4ba7f8264089bf80eed70e908a7262' for 241 unrouted items.
+2026-09-26 21:01:47.763 INFO   [8CDE67\D478BB] Auto-routing pass #1 on board 'ad4ba7f8264089bf80eed70e908a7262' was completed in 13.12 seconds with the score of 962.65 (9 unrouted and 0 violations), using 12.38 CPU seconds and the job allocated 39.35 GB of memory so far.
+2026-09-26 21:01:50.073 INFO   [8CDE67\D478BB] Auto-routing pass #2 on board 'cf5b6356c287be9fd1462607775b2929' was completed in 2.22 seconds with the score of 995.84 (1 unrouted and 0 violations), using 14.31 CPU seconds and the job allocated 47.72 GB of memory so far.
+2026-09-26 21:01:50.400 INFO   [8CDE67\D478BB] Auto-routing pass #3 on board 'eaa6093a04d7b5d8df0c5ff14ef56ac3' was completed in 0.25 seconds with the score of 999.99 (0 unrouted and 0 violations), using 14.31 CPU seconds and the job allocated 47.72 GB of memory so far.
+2026-09-26 21:01:50.500 INFO   [8CDE67\D478BB] Auto-routing pass #4 on board '011496fa479cf6be61debb59274b6101' was completed in 0.03 seconds with the score of 999.99 (0 unrouted and 0 violations), using 15.27 CPU seconds and the job allocated 53.17 GB of memory so far.
+2026-09-26 21:01:50.565 INFO   [8CDE67\D478BB] Auto-routing stage completed: started with 241 unrouted nets, completed in 16.09 seconds, final score: 999.99 (0 unrouted and 0 violations), using 15.27 total CPU seconds, 53.17 GB total allocated, and 499.8 MB peak heap usage.
+2026-09-26 21:01:50.666 INFO   [8CDE67\D478BB] Starting optimization on 1 thread...
+2026-09-26 21:01:50.709 INFO   [8CDE67\D478BB] Optimization stage started on board '011496fa479cf6be61debb59274b6101' with score 999.99 (0 unrouted and 0 violations).
+2026-09-26 21:01:50.738 INFO   [8CDE67\D478BB] Stopping optimizer because the current board score (999.99) is already close to the maximum score (1000). Remaining potential improvement is less than the threshold (1.00%).
+2026-09-26 21:01:50.769 INFO   [8CDE67\D478BB] Optimization stage completed: started with score 999.99 (0 unrouted and 0 violations), completed in 0.03 seconds, final score: 999.99 (0 unrouted and 0 violations), using 0.03 total CPU seconds, 0.16 GB total allocated, and 371.1 MB peak heap usage.
+2026-09-26 21:01:50.793 INFO   [8CDE67\D478BB] Optimization was completed in 0.13 seconds with the score of 999.99 (0 unrouted and 0 violations).
+2026-09-26 21:02:12.732 INFO   Saving 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\neuromorphic-ir-sensor-tht.ses'...

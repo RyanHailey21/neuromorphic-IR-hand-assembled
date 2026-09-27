@@ -1,0 +1,10 @@
+(sym_lib_table
+	(version 7)
+	(lib
+		(name "neuromorphic-ir-sensor-compact")
+		(type "KiCad")
+		(uri "${KIPRJMOD}/neuromorphic-ir-sensor-compact.kicad_sym")
+		(options "")
+		(descr "Project symbols")
+	)
+)

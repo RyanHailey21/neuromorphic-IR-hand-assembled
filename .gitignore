@@ -1,0 +1,12 @@
+# KiCad local backup history (has its own nested .git, not needed here)
+.history/
+
+__pycache__/
+*.pyc
+
+# KiCad autosave / lock files
+*.kicad_pcb-bak
+*.kicad_sch-bak
+_autosave-*
+*.lck
+fp-info-cache

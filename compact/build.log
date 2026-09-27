@@ -1,0 +1,402 @@
+{'status': 'success', 'lib_id': 'neuromorphic-ir-sensor-compact:OPA2381_DRB', 'library_file': 'C:\\Users\\ryanh\\neuromorphic_IR_hand_assembled\\compact\\neuromorphic-ir-sensor-compact.kicad_sym', 'added_pins': ['9'], 'registered_in_sym_lib_table': False}
+schematic: success A0 ERC 0 []
+30.0x30.0: placed 121 overflow [] score 0 drc_crt 0
+Executing Freerouting: java -jar C:\Users\ryanh\Documents\KiCad\10.0\3rdparty\plugins\app_freerouting_kicad-plugin\jar\freerouting.jar -de C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.dsn -do C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.ses -mp 20 -mt 1
+Streaming live progress to console and C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.freerouting.log ...
+[Freerouting] 2026-09-27 01:01:50.869 INFO   Freerouting v2.3.0 (build-date: 2026-08-07)
+[Freerouting] 2026-09-27 01:01:51.990 INFO   Parsed 1 router setting(s) from environment variables
+[Freerouting] 2026-09-27 01:01:52.239 INFO   Opening 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.dsn'...
+[Freerouting] 2026-09-27 01:01:52.717 INFO   New version available: v2.4.1
+[Freerouting] 2026-09-27 01:01:53.042 INFO   [3EF253\7B5035] Loading board file 'neuromorphic-ir-sensor-compact.dsn'...
+[Freerouting] 2026-09-27 01:02:00.794 INFO   [3EF253\7B5035] Starting routing of 'neuromorphic-ir-sensor-compact' on 1 thread...
+[Freerouting] 2026-09-27 01:02:00.898 INFO   [3EF253\7B5035] Fanout stage started on board '1d1088ade31e9da1ef2542c07cb36f4b' with 311 of 311 SMD pins needing fanout (0 already connected, 0 netless).
+[Freerouting] 2026-09-27 01:02:12.637 INFO   [3EF253\7B5035] Fanout pass #1 on board 'caf508b0d7c24ece4e9c8e2d0fa930fa' completed in 11.66 seconds with 229 SMD pins fanouted, 75 not routed, 0 insert errors, +54 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+[Freerouting] 2026-09-27 01:02:21.947 INFO   [3EF253\7B5035] Fanout pass #2 on board 'c652fa42ba542c5c16e502e3cc2439de' completed in 9.29 seconds with 102 SMD pins fanouted, 80 not routed, 0 insert errors, +14 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+[Freerouting] 2026-09-27 01:02:29.374 INFO   [3EF253\7B5035] Fanout pass #3 on board 'd1ef405451269a7e9ff65d5aa9291217' completed in 7.40 seconds with 69 SMD pins fanouted, 74 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+[Freerouting] 2026-09-27 01:02:35.428 INFO   [3EF253\7B5035] Fanout pass #4 on board '41ad846b12f7175bde6c24607621d03f' completed in 6.04 seconds with 53 SMD pins fanouted, 75 not routed, 0 insert errors, +11 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+[Freerouting] 2026-09-27 01:02:38.875 INFO   [3EF253\7B5035] Fanout pass #5 on board 'f6fdad68c57c853dcaefb587f386350d' completed in 3.44 seconds with 27 SMD pins fanouted, 81 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+[Freerouting] 2026-09-27 01:02:42.239 INFO   [3EF253\7B5035] Fanout pass #6 on board '4e0dc652a083db631fe0e6028b39a492' completed in 3.35 seconds with 27 SMD pins fanouted, 76 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+[Freerouting] 2026-09-27 01:02:45.332 INFO   [3EF253\7B5035] Fanout pass #7 on board '6b6677e7daed7ee0571f193edf67eee7' completed in 3.08 seconds with 28 SMD pins fanouted, 78 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=700).
+[Freerouting] 2026-09-27 01:02:48.426 INFO   [3EF253\7B5035] Fanout pass #8 on board '778eafed3f553dfc9fb7f77621465634' completed in 3.08 seconds with 31 SMD pins fanouted, 75 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=800).
+[Freerouting] 2026-09-27 01:02:51.511 INFO   [3EF253\7B5035] Fanout pass #9 on board '020dbf3f35c170866405c0dc11ef2cf8' completed in 3.07 seconds with 28 SMD pins fanouted, 78 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=900).
+[Freerouting] 2026-09-27 01:02:54.398 INFO   [3EF253\7B5035] Fanout pass #10 on board '527498795b3e21c5a0c89c667f1ec44d' completed in 2.87 seconds with 26 SMD pins fanouted, 77 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=1000).
+[Freerouting] 2026-09-27 01:02:57.701 INFO   [3EF253\7B5035] Fanout pass #11 on board '1ea3fde0d273d4a31d65b8ef7b33ee2b' completed in 3.28 seconds with 27 SMD pins fanouted, 75 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=1100).
+[Freerouting] 2026-09-27 01:03:01.140 INFO   [3EF253\7B5035] Fanout pass #12 on board '753294eff5689db3b34d8d106a89ae59' completed in 3.43 seconds with 26 SMD pins fanouted, 76 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=1200).
+[Freerouting] 2026-09-27 01:03:04.198 INFO   [3EF253\7B5035] Fanout pass #13 on board 'f82f627b5033ddc7883fd17c325d2ebb' completed in 3.05 seconds with 27 SMD pins fanouted, 75 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=1300).
+[Freerouting] 2026-09-27 01:03:07.373 INFO   [3EF253\7B5035] Fanout pass #14 on board 'e92084bb724b14aabc74f844dc22b899' completed in 3.16 seconds with 32 SMD pins fanouted, 74 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=1400).
+[Freerouting] 2026-09-27 01:03:11.758 INFO   [3EF253\7B5035] Fanout pass #15 on board '0aeddbf4104973ff6fdc67f8552cba6e' completed in 4.37 seconds with 30 SMD pins fanouted, 75 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=1500).
+[Freerouting] 2026-09-27 01:03:15.834 INFO   [3EF253\7B5035] Fanout pass #16 on board '91a3d38995f7d4b5837d6c5fcd21eb00' completed in 4.06 seconds with 33 SMD pins fanouted, 72 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=1600).
+[Freerouting] 2026-09-27 01:03:19.863 INFO   [3EF253\7B5035] Fanout pass #17 on board '9b244ac4a687f0f04e32735071c4d269' completed in 4.02 seconds with 31 SMD pins fanouted, 73 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=1700).
+[Freerouting] 2026-09-27 01:03:22.845 INFO   [3EF253\7B5035] Fanout pass #18 on board '23c26e1d4186e5359e0a48a70759de01' completed in 2.97 seconds with 27 SMD pins fanouted, 77 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=1800).
+[Freerouting] 2026-09-27 01:03:26.874 INFO   [3EF253\7B5035] Fanout pass #19 on board '4c8f1c85e8c8da3b95f2d358909c8bc6' completed in 4.02 seconds with 31 SMD pins fanouted, 76 not routed, 0 insert errors, +3 extra vias (0 SMD pins still to check in pass, ripup costs=1900).
+[Freerouting] 2026-09-27 01:03:30.046 INFO   [3EF253\7B5035] Fanout pass #20 on board '4517b317cb125a78017fa040aa05f7de' completed in 3.16 seconds with 26 SMD pins fanouted, 75 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=2000).
+[Freerouting] 2026-09-27 01:03:30.217 INFO   [3EF253\7B5035] Fanout stage completed: started with 311 total SMD pins, completed in 89.27 seconds, escaped pins: 250/311 (80.4%), using 85.81 total CPU seconds, 363.66 GB total allocated, and 509.6 MB peak heap usage.
+[Freerouting] 2026-09-27 01:03:30.236 INFO   [3EF253\7B5035] Auto-routing stage started on board '4517b317cb125a78017fa040aa05f7de' for 96 unrouted items.
+[Freerouting] 2026-09-27 01:04:05.700 INFO   [3EF253\7B5035] Auto-routing pass #1 on board '4517b317cb125a78017fa040aa05f7de' was completed in 35.08 seconds with the score of 761.90 (60 unrouted and 0 violations), using 119.09 CPU seconds and the job allocated 526.93 GB of memory so far.
+[Freerouting] 2026-09-27 01:04:35.102 INFO   [3EF253\7B5035] Auto-routing pass #2 on board '81492daad1ae013795288b3d78f2f71f' was completed in 29.00 seconds with the score of 888.88 (28 unrouted and 0 violations), using 147.69 CPU seconds and the job allocated 656.26 GB of memory so far.
+[Freerouting] 2026-09-27 01:04:48.772 INFO   [3EF253\7B5035] Auto-routing pass #3 on board '56f9a7335f8c9109080e7a3ca4c0cb76' was completed in 13.29 seconds with the score of 896.81 (26 unrouted and 0 violations), using 160.28 CPU seconds and the job allocated 718.21 GB of memory so far.
+[Freerouting] 2026-09-27 01:04:58.984 INFO   [3EF253\7B5035] Auto-routing pass #4 on board 'a908e9e3314f6e49d1fb68f5556bdbe5' was completed in 9.80 seconds with the score of 896.81 (26 unrouted and 0 violations), using 170.92 CPU seconds and the job allocated 772.38 GB of memory so far.
+[Freerouting] 2026-09-27 01:05:08.490 INFO   [3EF253\7B5035] Auto-routing pass #5 on board '35023cae09b4403cc5c5290dea538c42' was completed in 9.17 seconds with the score of 904.75 (24 unrouted and 0 violations), using 179.69 CPU seconds and the job allocated 819.35 GB of memory so far.
+[Freerouting] 2026-09-27 01:05:20.173 INFO   [3EF253\7B5035] Auto-routing pass #6 on board '3aa028ea86f86d466986e4d52c2872e1' was completed in 11.30 seconds with the score of 916.65 (21 unrouted and 0 violations), using 191.44 CPU seconds and the job allocated 878.37 GB of memory so far.
+[Freerouting] 2026-09-27 01:05:32.144 INFO   [3EF253\7B5035] Auto-routing pass #7 on board '20c168f1fb7f5710a951517f5a734a9a' was completed in 11.58 seconds with the score of 900.78 (25 unrouted and 0 violations), using 202.98 CPU seconds and the job allocated 931.68 GB of memory so far.
+[Freerouting] 2026-09-27 01:05:48.086 INFO   [3EF253\7B5035] Auto-routing pass #8 on board '20c168f1fb7f5710a951517f5a734a9a' was completed in 0.00 seconds with the score of 916.65 (21 unrouted and 0 violations), using 218.44 CPU seconds and the job allocated 1001.53 GB of memory so far.
+[Freerouting] 2026-09-27 01:05:59.669 INFO   [3EF253\7B5035] Auto-routing pass #9 on board '20c168f1fb7f5710a951517f5a734a9a' was completed in 11.36 seconds with the score of 896.81 (26 unrouted and 0 violations), using 229.11 CPU seconds and the job allocated 1048.80 GB of memory so far.
+[Freerouting] 2026-09-27 01:06:10.339 INFO   [3EF253\7B5035] Auto-routing pass #10 on board '2ac03d5a21e7619d2b062c4997123356' was completed in 10.15 seconds with the score of 932.53 (17 unrouted and 0 violations), using 239.69 CPU seconds and the job allocated 1105.33 GB of memory so far.
+[Freerouting] 2026-09-27 01:06:20.035 INFO   [3EF253\7B5035] Auto-routing pass #11 on board '1b91699b09fb1f63ca753e4ef9814294' was completed in 9.33 seconds with the score of 920.62 (20 unrouted and 0 violations), using 249.33 CPU seconds and the job allocated 1151.61 GB of memory so far.
+[Freerouting] 2026-09-27 01:06:32.627 INFO   [3EF253\7B5035] Auto-routing pass #12 on board '1b91699b09fb1f63ca753e4ef9814294' was completed in 0.00 seconds with the score of 932.53 (17 unrouted and 0 violations), using 260.89 CPU seconds and the job allocated 1204.15 GB of memory so far.
+[Freerouting] 2026-09-27 01:06:45.266 INFO   [3EF253\7B5035] Auto-routing pass #13 on board '1b91699b09fb1f63ca753e4ef9814294' was completed in 12.39 seconds with the score of 920.62 (20 unrouted and 0 violations), using 273.20 CPU seconds and the job allocated 1258.74 GB of memory so far.
+[Freerouting] 2026-09-27 01:06:58.867 INFO   [3EF253\7B5035] Auto-routing pass #14 on board '52f8a78eda971bf9a864432c3a020162' was completed in 13.22 seconds with the score of 936.49 (16 unrouted and 0 violations), using 285.77 CPU seconds and the job allocated 1314.04 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:05.848 INFO   [3EF253\7B5035] Auto-routing pass #15 on board '8e4ba8414a202136951972cfc9f9b1a9' was completed in 6.60 seconds with the score of 936.49 (16 unrouted and 0 violations), using 292.52 CPU seconds and the job allocated 1349.16 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:13.671 INFO   [3EF253\7B5035] Auto-routing pass #16 on board 'da00b3d8cd86db106762ee6b4b29f99f' was completed in 7.34 seconds with the score of 936.49 (16 unrouted and 0 violations), using 300.30 CPU seconds and the job allocated 1386.96 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:20.145 INFO   [3EF253\7B5035] Auto-routing pass #17 on board 'da00b3d8cd86db106762ee6b4b29f99f' was completed in 6.27 seconds with the score of 932.53 (17 unrouted and 0 violations), using 307.08 CPU seconds and the job allocated 1422.38 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:27.746 INFO   [3EF253\7B5035] Auto-routing pass #18 on board '54a370c1ae29485978c0215b7080e6ef' was completed in 7.24 seconds with the score of 932.53 (17 unrouted and 0 violations), using 313.86 CPU seconds and the job allocated 1457.62 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:35.871 INFO   [3EF253\7B5035] Auto-routing pass #19 on board '1ba3243c1e2e9aa1754b62359c5efeb5' was completed in 7.55 seconds with the score of 928.56 (18 unrouted and 0 violations), using 321.48 CPU seconds and the job allocated 1497.04 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:46.721 INFO   [3EF253\7B5035] Auto-routing pass #20 on board 'de411de1dbda458b6a089f3f72990dd9' was completed in 10.40 seconds with the score of 936.49 (16 unrouted and 0 violations), using 332.14 CPU seconds and the job allocated 1546.66 GB of memory so far.
+[Freerouting] 2026-09-27 01:07:47.088 INFO   [3EF253\7B5035] Auto-routing stage completed: started with 252 unrouted nets, completed in 346.29 seconds, final score: 936.49 (16 unrouted and 0 violations), using 333.13 total CPU seconds, 1552.93 GB total allocated, and 890.1 MB peak heap usage.
+[Freerouting] 2026-09-27 01:07:47.189 INFO   [3EF253\7B5035] Starting optimization on 1 thread...
+[Freerouting] 2026-09-27 01:07:47.447 INFO   [3EF253\7B5035] Optimization stage started on board '0eaf2cdd4c1e3b0b5f751637d4096d9b' with score 916.65 (21 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:08:08.984 INFO   [3EF253\7B5035] Stopping optimization pass #1 early after 50 consecutive items could not be improved.
+[Freerouting] 2026-09-27 01:08:09.196 INFO   [3EF253\7B5035] Optimizer pass #1 on board '671f545aa063ab9d6697755f175feea1' was completed in 21.10 seconds with the score of 916.65 (21 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:08:09.401 INFO   [3EF253\7B5035] Stopping optimizer because the improvement in this pass (0.0000%) is below the threshold (1.00%).
+[Freerouting] 2026-09-27 01:08:09.579 INFO   [3EF253\7B5035] Optimization stage completed: started with score 916.65 (21 unrouted and 0 violations), completed in 21.96 seconds, final score: 916.65 (21 unrouted and 0 violations), using 21.31 total CPU seconds, 114.54 GB total allocated, and 907.6 MB peak heap usage.
+[Freerouting] 2026-09-27 01:08:09.790 INFO   [3EF253\7B5035] Optimization was completed in 22.60 seconds with the score of 936.49 (16 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:08:09.865 INFO   Saving 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.ses'...
+Executing Freerouting: java -jar C:\Users\ryanh\Documents\KiCad\10.0\3rdparty\plugins\app_freerouting_kicad-plugin\jar\freerouting.jar -de C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.dsn -do C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.ses -mp 20 -mt 1
+Streaming live progress to console and C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.freerouting.log ...
+[Freerouting] 2026-09-27 01:08:14.802 INFO   Freerouting v2.3.0 (build-date: 2026-08-07)
+[Freerouting] 2026-09-27 01:08:15.920 INFO   Parsed 1 router setting(s) from environment variables
+[Freerouting] 2026-09-27 01:08:16.268 INFO   Opening 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.dsn'...
+[Freerouting] 2026-09-27 01:08:16.498 INFO   New version available: v2.4.1
+[Freerouting] 2026-09-27 01:08:16.939 INFO   [2D39A3\93D961] Loading board file 'neuromorphic-ir-sensor-compact.dsn'...
+[Freerouting] 2026-09-27 01:08:25.538 INFO   [2D39A3\93D961] Starting routing of 'neuromorphic-ir-sensor-compact' on 1 thread...
+[Freerouting] 2026-09-27 01:08:25.841 INFO   [2D39A3\93D961] Fanout stage started on board '534c8feedeade2549ff0792c545ba7c3' with 268 of 311 SMD pins needing fanout (43 already connected, 0 netless).
+[Freerouting] 2026-09-27 01:10:27.712 WARN   BasicBoard.normalize_traces: reached 2000 iterations for net '/GND' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+[Freerouting] 2026-09-27 01:10:28.817 INFO   [2D39A3\93D961] Fanout pass #1 on board '37d4bdc12b4651ea9d192ddf80887b1f' completed in 122.81 seconds with 120 SMD pins fanouted, 17 not routed, 0 insert errors, +3 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+[Freerouting] 2026-09-27 01:10:31.177 INFO   [2D39A3\93D961] Fanout pass #2 on board '49612337c8a37814761ee024e0e9ceba' completed in 2.33 seconds with 93 SMD pins fanouted, 20 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+[Freerouting] 2026-09-27 01:10:33.111 INFO   [2D39A3\93D961] Fanout pass #3 on board 'f42e179391242a1faf116460f898aee9' completed in 1.90 seconds with 89 SMD pins fanouted, 15 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+[Freerouting] 2026-09-27 01:10:35.007 INFO   [2D39A3\93D961] Fanout pass #4 on board '4a105ea4d123f03f881e5abc9e989013' completed in 1.87 seconds with 89 SMD pins fanouted, 15 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+[Freerouting] 2026-09-27 01:10:36.744 INFO   [2D39A3\93D961] Fanout pass #5 on board '5098d99760e2b45e6befa50fae079ead' completed in 1.72 seconds with 89 SMD pins fanouted, 15 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+[Freerouting] 2026-09-27 01:10:38.568 INFO   [2D39A3\93D961] Fanout pass #6 on board '72e1b60aa0739f8527d0744d733eca79' completed in 1.80 seconds with 89 SMD pins fanouted, 15 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+[Freerouting] 2026-09-27 01:10:38.568 INFO   Fanout stopped after 6 passes: no progress for 3 consecutive passes.
+[Freerouting] 2026-09-27 01:10:38.759 INFO   [2D39A3\93D961] Fanout stage completed: started with 311 total SMD pins, completed in 132.79 seconds, escaped pins: 234/311 (75.2%), using 128.73 total CPU seconds, 552.69 GB total allocated, and 345.0 MB peak heap usage.
+[Freerouting] 2026-09-27 01:10:38.794 INFO   [2D39A3\93D961] Auto-routing stage started on board '72e1b60aa0739f8527d0744d733eca79' for 93 unrouted items.
+[Freerouting] 2026-09-27 01:11:17.258 INFO   [2D39A3\93D961] Auto-routing pass #1 on board '72e1b60aa0739f8527d0744d733eca79' was completed in 37.78 seconds with the score of 730.15 (68 unrouted and 0 violations), using 165.16 CPU seconds and the job allocated 719.45 GB of memory so far.
+[Freerouting] 2026-09-27 01:11:47.016 INFO   [2D39A3\93D961] Auto-routing pass #2 on board 'e47082e21030322494619c6f2b7c07b4' was completed in 29.32 seconds with the score of 730.15 (68 unrouted and 0 violations), using 194.20 CPU seconds and the job allocated 853.83 GB of memory so far.
+[Freerouting] 2026-09-27 01:12:19.664 INFO   [2D39A3\93D961] Auto-routing pass #3 on board '021ecb0ff5164fb7bc3b3f10d6ad0709' was completed in 32.21 seconds with the score of 730.15 (68 unrouted and 0 violations), using 225.20 CPU seconds and the job allocated 995.35 GB of memory so far.
+[Freerouting] 2026-09-27 01:12:50.029 INFO   [2D39A3\93D961] Auto-routing pass #4 on board 'c0416bb5082b6b1f85be177de2f69829' was completed in 29.87 seconds with the score of 730.15 (68 unrouted and 0 violations), using 255.08 CPU seconds and the job allocated 1142.17 GB of memory so far.
+[Freerouting] 2026-09-27 01:13:19.677 INFO   [2D39A3\93D961] Auto-routing pass #5 on board '714f542bf432a63d44dae808e9186e3f' was completed in 29.21 seconds with the score of 730.15 (68 unrouted and 0 violations), using 283.44 CPU seconds and the job allocated 1282.65 GB of memory so far.
+[Freerouting] 2026-09-27 01:13:50.631 INFO   [2D39A3\93D961] Auto-routing pass #6 on board '610885e7f38ef4d3da04436f43013c3f' was completed in 30.52 seconds with the score of 730.15 (68 unrouted and 0 violations), using 313.55 CPU seconds and the job allocated 1429.03 GB of memory so far.
+[Freerouting] 2026-09-27 01:14:25.246 INFO   [2D39A3\93D961] Auto-routing pass #7 on board '015003e3f411e2e6550f87f40e6522a5' was completed in 34.12 seconds with the score of 730.15 (68 unrouted and 0 violations), using 347.48 CPU seconds and the job allocated 1581.33 GB of memory so far.
+[Freerouting] 2026-09-27 01:14:54.496 INFO   [2D39A3\93D961] Auto-routing pass #8 on board '733e86cfeea981cee65d4f5fea021a0a' was completed in 28.81 seconds with the score of 730.15 (68 unrouted and 0 violations), using 375.63 CPU seconds and the job allocated 1724.54 GB of memory so far.
+[Freerouting] 2026-09-27 01:15:27.145 INFO   [2D39A3\93D961] Auto-routing pass #9 on board 'd4c4c849dbbb37d49431e5a9ffc4d8a8' was completed in 32.12 seconds with the score of 730.15 (68 unrouted and 0 violations), using 407.83 CPU seconds and the job allocated 1877.99 GB of memory so far.
+[Freerouting] 2026-09-27 01:16:01.878 INFO   [2D39A3\93D961] Auto-routing pass #10 on board '4fdf68c78543c4a70589ef41274e19d3' was completed in 34.24 seconds with the score of 730.15 (68 unrouted and 0 violations), using 440.77 CPU seconds and the job allocated 2026.86 GB of memory so far.
+[Freerouting] 2026-09-27 01:16:34.080 INFO   [2D39A3\93D961] Auto-routing pass #11 on board 'ee2b26025b79942b5f4bfd8656743136' was completed in 31.76 seconds with the score of 730.15 (68 unrouted and 0 violations), using 472.98 CPU seconds and the job allocated 2183.37 GB of memory so far.
+[Freerouting] 2026-09-27 01:17:06.295 INFO   [2D39A3\93D961] Auto-routing pass #12 on board 'cbe20cd4a1cc74ab5214abadc889b4b1' was completed in 31.54 seconds with the score of 730.15 (68 unrouted and 0 violations), using 504.25 CPU seconds and the job allocated 2336.24 GB of memory so far.
+[Freerouting] 2026-09-27 01:17:38.498 INFO   [2D39A3\93D961] Auto-routing pass #13 on board '0a5380ed87c35f885ac4dce9a13a2cd3' was completed in 31.74 seconds with the score of 730.15 (68 unrouted and 0 violations), using 535.28 CPU seconds and the job allocated 2488.99 GB of memory so far.
+[Freerouting] 2026-09-27 01:18:10.611 INFO   [2D39A3\93D961] Auto-routing pass #14 on board 'd2737fe6f1c85bda838b2f73f7a80fc4' was completed in 31.66 seconds with the score of 730.15 (68 unrouted and 0 violations), using 566.44 CPU seconds and the job allocated 2642.39 GB of memory so far.
+[Freerouting] 2026-09-27 01:18:43.571 INFO   [2D39A3\93D961] Auto-routing pass #15 on board '4036a7bbdc80108f9d150e0d13d4acd6' was completed in 32.50 seconds with the score of 730.15 (68 unrouted and 0 violations), using 598.50 CPU seconds and the job allocated 2797.03 GB of memory so far.
+[Freerouting] 2026-09-27 01:19:16.510 INFO   [2D39A3\93D961] Auto-routing pass #16 on board '28f2e8e24fc0156ce224958695d9e502' was completed in 32.48 seconds with the score of 730.15 (68 unrouted and 0 violations), using 630.58 CPU seconds and the job allocated 2952.29 GB of memory so far.
+[Freerouting] 2026-09-27 01:19:49.325 INFO   [2D39A3\93D961] Auto-routing pass #17 on board '89a5f8024a88237443e138cbd46fb3ec' was completed in 32.32 seconds with the score of 730.15 (68 unrouted and 0 violations), using 662.56 CPU seconds and the job allocated 3108.51 GB of memory so far.
+[Freerouting] 2026-09-27 01:20:25.201 INFO   [2D39A3\93D961] Auto-routing pass #18 on board 'ccccc67d6d616c6a16fd12853edecf17' was completed in 35.39 seconds with the score of 730.15 (68 unrouted and 0 violations), using 697.36 CPU seconds and the job allocated 3265.03 GB of memory so far.
+[Freerouting] 2026-09-27 01:20:25.257 INFO   [2D39A3\93D961] The router's best score (730.15) has not improved by more than 0.5 points since pass #8. Stopping the auto-router after 18 passes (68 items still unconnected).
+[Freerouting] The following connections could not be routed -- please review your design (e.g. check pad clearances, trace width rules, and available routing space):
+[Freerouting] Net '/GND' (16 unrouted connections):
+[Freerouting] - via  ->  C36-2
+[Freerouting] - U6-4  ->  U13-1
+[Freerouting] - C22-2  ->  U11-4
+[Freerouting] - U7-4  ->  C3-2
+[Freerouting] - C34-2  ->  D2-2
+[Freerouting] - C5-2  ->  via
+[Freerouting] - U8-4  ->  U8-1
+[Freerouting] - U14-1  ->  U14-4
+[Freerouting] - C6-2  ->  C24-2
+[Freerouting] - U8-1  ->  via
+[Freerouting] - C20-2  ->  C7-2
+[Freerouting] - C4-2  ->  U3-4
+[Freerouting] - C21-2  ->  U1-3
+[Freerouting] - C3-2  ->  Q1-2
+[Freerouting] - via  ->  C20-2
+[Freerouting] - TP2-1  ->  U9-4
+[Freerouting] Net '/3V3' (3 unrouted connections):
+[Freerouting] - U14-8  ->  U15-3
+[Freerouting] - U8-8  ->  U8-3
+[Freerouting] - U10-8  ->  R21-2
+[Freerouting] Net '/RAW_OFF_BL' (1 unrouted connection):
+[Freerouting] - via  ->  U6-7
+[Freerouting] Net '/3V3A' (6 unrouted connections):
+[Freerouting] - via  ->  U6-8
+[Freerouting] - via  ->  TP1-1
+[Freerouting] - U1-1  ->  R1-1
+[Freerouting] - U7-8  ->  C20-1
+[Freerouting] - U2-8  ->  via
+[Freerouting] - C20-1  ->  R1-1
+[Freerouting] Net '/VTH_ON' (4 unrouted connections):
+[Freerouting] - TP4-1  ->  C6-1
+[Freerouting] - via  ->  U5-2
+[Freerouting] - via  ->  U6-2
+[Freerouting] - via  ->  U7-2
+[Freerouting] Net '/VEVENT_BR' (2 unrouted connections):
+[Freerouting] - via  ->  U7-6
+[Freerouting] - U7-6  ->  U7-3
+[Freerouting] Net '/RAW_OFF_TL' (1 unrouted connection):
+[Freerouting] - via  ->  U4-7
+[Freerouting] Net '/RAW_ON_BR' (1 unrouted connection):
+[Freerouting] - U14-2  ->  TP21-1
+[Freerouting] Net '/VTH_OFF' (2 unrouted connections):
+[Freerouting] - U6-5  ->  via
+[Freerouting] - via  ->  U4-5
+[Freerouting] Net '/RC_ON_BR' (2 unrouted connections):
+[Freerouting] - U14-7  ->  C35-2
+[Freerouting] - U14-7  ->  R29-1
+[Freerouting] Net '/RC_OFF_BR' (1 unrouted connection):
+[Freerouting] - R31-1  ->  via
+[Freerouting] Net '/RAW_OFF_TR' (1 unrouted connection):
+[Freerouting] - via  ->  U5-7
+[Freerouting] Net '/TIA_IN_BR' (1 unrouted connection):
+[Freerouting] - U3-6  ->  via
+[Freerouting] Net '/CX_ON_TR' (1 unrouted connection):
+[Freerouting] - C27-1  ->  U10-6
+[Freerouting] Net '/RC_ON_TR' (1 unrouted connection):
+[Freerouting] - R21-1  ->  via
+[Freerouting] Net '/RC_ON_BL' (1 unrouted connection):
+[Freerouting] - R25-1  ->  C31-2
+[Freerouting] Net '/VREF' (2 unrouted connections):
+[Freerouting] - via  ->  via
+[Freerouting] - U3-3  ->  C4-1
+[Freerouting] Net '/TIA_IN_TR' (1 unrouted connection):
+[Freerouting] - C12-1  ->  R7-1
+[Freerouting] Net '/VPHOTO_TR' (1 unrouted connection):
+[Freerouting] - via  ->  TP8-1
+[Freerouting] Net '/VEVENT_TR' (3 unrouted connections):
+[Freerouting] - C13-2  ->  TP12-1
+[Freerouting] - U5-3  ->  U5-6
+[Freerouting] - U5-6  ->  R14-2
+[Freerouting] Net '/LED_EN' (1 unrouted connection):
+[Freerouting] - JP1-2  ->  via
+[Freerouting] Net '/SPIKE_OFF_BL' (1 unrouted connection):
+[Freerouting] - via  ->  R28-2
+[Freerouting] Net '/VPHOTO_TL' (1 unrouted connection):
+[Freerouting] - C11-1  ->  TP7-1
+[Freerouting] Net '/RAW_ON_TR' (2 unrouted connections):
+[Freerouting] - TP17-1  ->  via
+[Freerouting] - via  ->  U5-1
+[Freerouting] Net '/RAW_ON_TL' (2 unrouted connections):
+[Freerouting] - U8-2  ->  via
+[Freerouting] - U4-1  ->  via
+[Freerouting] Net '/VEVENT_BL' (4 unrouted connections):
+[Freerouting] - TP13-1  ->  via
+[Freerouting] - U6-3  ->  U6-6
+[Freerouting] - U6-3  ->  R15-2
+[Freerouting] - R15-2  ->  R10-1
+[Freerouting] Net '/RC_ON_TL' (1 unrouted connection):
+[Freerouting] - C23-2  ->  R17-1
+[Freerouting] Net '/VPHOTO_BL' (3 unrouted connections):
+[Freerouting] - C14-2  ->  via
+[Freerouting] - via  ->  C15-1
+[Freerouting] - TP9-1  ->  C14-2
+[Freerouting] Net '/Q_ON_TL' (1 unrouted connection):
+[Freerouting] - via  ->  U8-5
+[Freerouting] Net '/CX_ON_TL' (1 unrouted connection):
+[Freerouting] - via  ->  C23-1
+[Freerouting] 2026-09-27 01:20:25.745 INFO   [2D39A3\93D961] Auto-routing stage completed: started with 122 unrouted nets, completed in 720.21 seconds, final score: 730.15 (68 unrouted and 0 violations), using 697.36 total CPU seconds, 3265.03 GB total allocated, and 814.3 MB peak heap usage.
+[Freerouting] 2026-09-27 01:20:25.848 INFO   [2D39A3\93D961] Starting optimization on 1 thread...
+[Freerouting] 2026-09-27 01:20:26.094 INFO   [2D39A3\93D961] Optimization stage started on board 'c50c88657b4186313ef8351d8b7acfb6' with score 730.15 (68 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:20:50.096 INFO   [2D39A3\93D961] Optimizer pass #1 on board '719f3dd38dab25c7f7cbf9d6a73b496a' was completed in 23.33 seconds with the score of 730.15 (68 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:21:08.716 INFO   [2D39A3\93D961] Stopping optimization pass #2 early after 50 consecutive items could not be improved.
+[Freerouting] 2026-09-27 01:21:08.907 INFO   [2D39A3\93D961] Optimizer pass #2 on board '32b7348763df6d5925a536bf7a829b02' was completed in 18.04 seconds with the score of 730.15 (68 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:21:09.112 INFO   [2D39A3\93D961] Stopping optimizer because the improvement in this pass (0.0000%) is below the threshold (1.00%).
+[Freerouting] 2026-09-27 01:21:09.295 INFO   [2D39A3\93D961] Optimization stage completed: started with score 730.15 (68 unrouted and 0 violations), completed in 43.02 seconds, final score: 730.15 (68 unrouted and 0 violations), using 41.92 total CPU seconds, 214.55 GB total allocated, and 770.9 MB peak heap usage.
+[Freerouting] 2026-09-27 01:21:09.516 INFO   [2D39A3\93D961] Optimization was completed in 43.67 seconds with the score of 730.15 (68 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:21:09.583 WARN   [2D39A3\93D961] Invalid traces after autoroute: 126 traces not 45 degree
+[Freerouting] 2026-09-27 01:21:09.586 INFO   Saving 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.ses'...
+Executing Freerouting: java -jar C:\Users\ryanh\Documents\KiCad\10.0\3rdparty\plugins\app_freerouting_kicad-plugin\jar\freerouting.jar -de C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.dsn -do C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.ses -mp 20 -mt 1
+Streaming live progress to console and C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.freerouting.log ...
+[Freerouting] 2026-09-27 01:21:14.792 INFO   Freerouting v2.3.0 (build-date: 2026-08-07)
+[Freerouting] 2026-09-27 01:21:15.914 INFO   Parsed 1 router setting(s) from environment variables
+[Freerouting] 2026-09-27 01:21:16.189 INFO   Opening 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.dsn'...
+[Freerouting] 2026-09-27 01:21:16.482 INFO   New version available: v2.4.1
+[Freerouting] 2026-09-27 01:21:16.853 INFO   [BEF0D7\C06536] Loading board file 'neuromorphic-ir-sensor-compact.dsn'...
+[Freerouting] 2026-09-27 01:21:17.148 WARN   DSN file 'neuromorphic-ir-sensor-compact.dsn' was loaded with 44 warning(s).
+[Freerouting] 2026-09-27 01:21:25.597 INFO   [BEF0D7\C06536] Starting routing of 'neuromorphic-ir-sensor-compact' on 1 thread...
+[Freerouting] 2026-09-27 01:21:25.858 INFO   [BEF0D7\C06536] Fanout stage started on board '4e5ccea8f806816190dd9c1bf09aab48' with 268 of 311 SMD pins needing fanout (43 already connected, 0 netless).
+[Freerouting] 2026-09-27 01:21:29.272 INFO   [BEF0D7\C06536] Fanout pass #1 on board 'c0ae78dcd97be043891cb5c72b639988' completed in 3.23 seconds with 144 SMD pins fanouted, 15 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+[Freerouting] 2026-09-27 01:21:31.733 INFO   [BEF0D7\C06536] Fanout pass #2 on board '2a73725dec8fbe1c04e60b2b6c4fb85c' completed in 2.42 seconds with 123 SMD pins fanouted, 18 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+[Freerouting] 2026-09-27 01:21:34.141 INFO   [BEF0D7\C06536] Fanout pass #3 on board 'cc1f077b4df919c8be32a2df95b09333' completed in 2.38 seconds with 122 SMD pins fanouted, 19 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+[Freerouting] 2026-09-27 01:21:36.287 INFO   [BEF0D7\C06536] Fanout pass #4 on board '4743ace92f4950d1245069a501f6664e' completed in 2.12 seconds with 122 SMD pins fanouted, 19 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+[Freerouting] 2026-09-27 01:21:37.832 INFO   [BEF0D7\C06536] Fanout pass #5 on board '0196dbc914e18cbb465d44003c14c1c8' completed in 1.52 seconds with 122 SMD pins fanouted, 19 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+[Freerouting] 2026-09-27 01:21:39.273 INFO   [BEF0D7\C06536] Fanout pass #6 on board '861769c6f254204586267b0f13dd9196' completed in 1.41 seconds with 122 SMD pins fanouted, 19 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+[Freerouting] 2026-09-27 01:21:39.273 INFO   Fanout stopped after 6 passes: no progress for 3 consecutive passes.
+[Freerouting] 2026-09-27 01:21:39.370 INFO   [BEF0D7\C06536] Fanout stage completed: started with 311 total SMD pins, completed in 13.36 seconds, escaped pins: 228/311 (73.3%), using 13.23 total CPU seconds, 29.00 GB total allocated, and 342.2 MB peak heap usage.
+[Freerouting] 2026-09-27 01:21:39.407 INFO   [BEF0D7\C06536] Auto-routing stage started on board '861769c6f254204586267b0f13dd9196' for 126 unrouted items.
+[Freerouting] 2026-09-27 01:22:12.055 INFO   [BEF0D7\C06536] Auto-routing pass #1 on board '861769c6f254204586267b0f13dd9196' was completed in 32.18 seconds with the score of 587.29 (104 unrouted and 0 violations), using 44.48 CPU seconds and the job allocated 146.25 GB of memory so far.
+[Freerouting] 2026-09-27 01:22:31.785 INFO   [BEF0D7\C06536] Auto-routing pass #2 on board 'd736127da27ac531f6bf1fd2d9ce9ce8' was completed in 19.39 seconds with the score of 587.29 (104 unrouted and 0 violations), using 63.80 CPU seconds and the job allocated 234.34 GB of memory so far.
+[Freerouting] 2026-09-27 01:22:48.678 INFO   [BEF0D7\C06536] Auto-routing pass #3 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 16.56 seconds with the score of 587.29 (104 unrouted and 0 violations), using 80.14 CPU seconds and the job allocated 313.52 GB of memory so far.
+[Freerouting] 2026-09-27 01:23:07.390 INFO   [BEF0D7\C06536] Auto-routing pass #4 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 18.50 seconds with the score of 587.29 (104 unrouted and 0 violations), using 97.56 CPU seconds and the job allocated 393.77 GB of memory so far.
+[Freerouting] 2026-09-27 01:23:29.609 INFO   [BEF0D7\C06536] Auto-routing pass #5 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 22.04 seconds with the score of 587.29 (104 unrouted and 0 violations), using 118.95 CPU seconds and the job allocated 486.43 GB of memory so far.
+[Freerouting] 2026-09-27 01:23:50.845 INFO   [BEF0D7\C06536] Auto-routing pass #6 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 21.02 seconds with the score of 587.29 (104 unrouted and 0 violations), using 140.20 CPU seconds and the job allocated 580.06 GB of memory so far.
+[Freerouting] 2026-09-27 01:24:08.686 INFO   [BEF0D7\C06536] Auto-routing pass #7 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 17.61 seconds with the score of 587.29 (104 unrouted and 0 violations), using 156.33 CPU seconds and the job allocated 657.97 GB of memory so far.
+[Freerouting] 2026-09-27 01:24:28.798 INFO   [BEF0D7\C06536] Auto-routing pass #8 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 19.93 seconds with the score of 587.29 (104 unrouted and 0 violations), using 176.48 CPU seconds and the job allocated 748.02 GB of memory so far.
+[Freerouting] 2026-09-27 01:24:51.179 INFO   [BEF0D7\C06536] Auto-routing pass #9 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 22.18 seconds with the score of 587.29 (104 unrouted and 0 violations), using 197.83 CPU seconds and the job allocated 839.39 GB of memory so far.
+[Freerouting] 2026-09-27 01:25:12.596 INFO   [BEF0D7\C06536] Auto-routing pass #10 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 21.19 seconds with the score of 587.29 (104 unrouted and 0 violations), using 218.05 CPU seconds and the job allocated 927.55 GB of memory so far.
+[Freerouting] 2026-09-27 01:25:30.181 INFO   [BEF0D7\C06536] Auto-routing pass #11 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 17.39 seconds with the score of 587.29 (104 unrouted and 0 violations), using 235.52 CPU seconds and the job allocated 1009.34 GB of memory so far.
+[Freerouting] 2026-09-27 01:25:47.489 INFO   [BEF0D7\C06536] Auto-routing pass #12 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 16.98 seconds with the score of 587.29 (104 unrouted and 0 violations), using 252.05 CPU seconds and the job allocated 1086.94 GB of memory so far.
+[Freerouting] 2026-09-27 01:26:04.326 INFO   [BEF0D7\C06536] Auto-routing pass #13 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 16.65 seconds with the score of 587.29 (104 unrouted and 0 violations), using 268.50 CPU seconds and the job allocated 1166.38 GB of memory so far.
+[Freerouting] 2026-09-27 01:26:26.979 INFO   [BEF0D7\C06536] Auto-routing pass #14 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 22.43 seconds with the score of 587.29 (104 unrouted and 0 violations), using 290.83 CPU seconds and the job allocated 1261.92 GB of memory so far.
+[Freerouting] 2026-09-27 01:26:49.138 INFO   [BEF0D7\C06536] Auto-routing pass #15 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 21.98 seconds with the score of 587.29 (104 unrouted and 0 violations), using 312.22 CPU seconds and the job allocated 1354.03 GB of memory so far.
+[Freerouting] 2026-09-27 01:27:06.637 INFO   [BEF0D7\C06536] Auto-routing pass #16 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 17.31 seconds with the score of 587.29 (104 unrouted and 0 violations), using 328.73 CPU seconds and the job allocated 1432.38 GB of memory so far.
+[Freerouting] 2026-09-27 01:27:22.759 INFO   [BEF0D7\C06536] Auto-routing pass #17 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 15.94 seconds with the score of 587.29 (104 unrouted and 0 violations), using 344.19 CPU seconds and the job allocated 1507.84 GB of memory so far.
+[Freerouting] 2026-09-27 01:27:44.272 INFO   [BEF0D7\C06536] Auto-routing pass #18 on board 'dfa811d146bcee6a148058d295d26a7d' was completed in 21.34 seconds with the score of 587.29 (104 unrouted and 0 violations), using 365.66 CPU seconds and the job allocated 1600.59 GB of memory so far.
+[Freerouting] 2026-09-27 01:27:44.324 INFO   [BEF0D7\C06536] The router's best score (587.29) has not improved by more than 0.5 points since pass #8. Stopping the auto-router after 18 passes (104 items still unconnected).
+[Freerouting] The following connections could not be routed -- please review your design (e.g. check pad clearances, trace width rules, and available routing space):
+[Freerouting] Net '/GND' (20 unrouted connections):
+[Freerouting] - via  ->  C36-2
+[Freerouting] - U13-1  ->  U6-4
+[Freerouting] - U11-4  ->  C22-2
+[Freerouting] - U7-4  ->  C3-2
+[Freerouting] - D2-2  ->  C34-2
+[Freerouting] - U13-4  ->  via
+[Freerouting] - via  ->  JP1-3
+[Freerouting] - U14-1  ->  U15-4
+[Freerouting] - C8-2  ->  via
+[Freerouting] - U8-4  ->  U8-1
+[Freerouting] - C6-2  ->  C24-2
+[Freerouting] - U8-1  ->  via
+[Freerouting] - C7-2  ->  C20-2
+[Freerouting] - C4-2  ->  U3-4
+[Freerouting] - C21-2  ->  U1-3
+[Freerouting] - C5-2  ->  C19-2
+[Freerouting] - C3-2  ->  Q1-2
+[Freerouting] - via  ->  C20-2
+[Freerouting] - U5-4  ->  C5-2
+[Freerouting] - TP2-1  ->  U9-4
+[Freerouting] Net '/3V3' (10 unrouted connections):
+[Freerouting] - U11-3  ->  C22-1
+[Freerouting] - U13-8  ->  C28-1
+[Freerouting] - C26-1  ->  via
+[Freerouting] - U15-3  ->  U14-8
+[Freerouting] - C26-1  ->  via
+[Freerouting] - U12-3  ->  U15-8
+[Freerouting] - R31-2  ->  R29-2
+[Freerouting] - C36-1  ->  U9-8
+[Freerouting] - U8-3  ->  U8-8
+[Freerouting] - U10-8  ->  R21-2
+[Freerouting] Net '/RAW_OFF_BL' (1 unrouted connection):
+[Freerouting] - via  ->  U6-7
+[Freerouting] Net '/3V3A' (11 unrouted connections):
+[Freerouting] - U6-8  ->  via
+[Freerouting] - via  ->  TP1-1
+[Freerouting] - U1-1  ->  R1-1
+[Freerouting] - C20-1  ->  U7-8
+[Freerouting] - U2-8  ->  via
+[Freerouting] - R1-1  ->  C20-1
+[Freerouting] - U3-8  ->  via
+[Freerouting] - via  ->  U4-8
+[Freerouting] - via  ->  U3-8
+[Freerouting] - U7-8  ->  C3-1
+[Freerouting] - C1-1  ->  U2-8
+[Freerouting] Net '/VTH_ON' (5 unrouted connections):
+[Freerouting] - TP4-1  ->  C6-1
+[Freerouting] - via  ->  U5-2
+[Freerouting] - U6-2  ->  via
+[Freerouting] - U7-2  ->  via
+[Freerouting] - U6-2  ->  U7-2
+[Freerouting] Net '/VEVENT_BR' (2 unrouted connections):
+[Freerouting] - via  ->  U7-6
+[Freerouting] - U7-3  ->  U7-6
+[Freerouting] Net '/RAW_OFF_TL' (1 unrouted connection):
+[Freerouting] - via  ->  U4-7
+[Freerouting] Net '/RAW_ON_BR' (1 unrouted connection):
+[Freerouting] - U14-2  ->  TP21-1
+[Freerouting] Net '/VTH_OFF' (4 unrouted connections):
+[Freerouting] - U6-5  ->  via
+[Freerouting] - R3-2  ->  via
+[Freerouting] - U4-5  ->  C7-1
+[Freerouting] - via  ->  C7-1
+[Freerouting] Net '/RC_ON_BR' (2 unrouted connections):
+[Freerouting] - U14-7  ->  C35-2
+[Freerouting] - R29-1  ->  U14-7
+[Freerouting] Net '/RC_OFF_BR' (1 unrouted connection):
+[Freerouting] - via  ->  R31-1
+[Freerouting] Net '/RAW_OFF_TR' (1 unrouted connection):
+[Freerouting] - via  ->  U5-7
+[Freerouting] Net '/TIA_IN_BR' (2 unrouted connections):
+[Freerouting] - U3-6  ->  via
+[Freerouting] - C16-1  ->  via
+[Freerouting] Net '/CX_ON_TR' (1 unrouted connection):
+[Freerouting] - C27-1  ->  U10-6
+[Freerouting] Net '/RC_ON_TR' (1 unrouted connection):
+[Freerouting] - R21-1  ->  via
+[Freerouting] Net '/TIA_IN_TL' (1 unrouted connection):
+[Freerouting] - via  ->  C10-1
+[Freerouting] Net '/RC_ON_BL' (1 unrouted connection):
+[Freerouting] - R25-1  ->  C31-2
+[Freerouting] Net '/VREF' (5 unrouted connections):
+[Freerouting] - via  ->  via
+[Freerouting] - U3-3  ->  C4-1
+[Freerouting] - U2-5  ->  C4-1
+[Freerouting] - R12-2  ->  via
+[Freerouting] - via  ->  TP3-1
+[Freerouting] Net '/RAW_ON_BL' (2 unrouted connections):
+[Freerouting] - U12-2  ->  U6-1
+[Freerouting] - U12-2  ->  TP19-1
+[Freerouting] Net '/TIA_IN_TR' (1 unrouted connection):
+[Freerouting] - C12-1  ->  R7-1
+[Freerouting] Net '/VPHOTO_BR' (3 unrouted connections):
+[Freerouting] - via  ->  C16-2
+[Freerouting] - C16-2  ->  C17-1
+[Freerouting] - via  ->  U3-7
+[Freerouting] Net '/VPHOTO_TR' (2 unrouted connections):
+[Freerouting] - via  ->  C12-2
+[Freerouting] - via  ->  TP8-1
+[Freerouting] Net '/VEVENT_TR' (5 unrouted connections):
+[Freerouting] - R8-1  ->  R14-2
+[Freerouting] - TP12-1  ->  C13-2
+[Freerouting] - U5-3  ->  U5-6
+[Freerouting] - U5-6  ->  R14-2
+[Freerouting] - R8-1  ->  C13-2
+[Freerouting] Net '/LED_EN' (2 unrouted connections):
+[Freerouting] - JP1-2  ->  via
+[Freerouting] - TP6-1  ->  JP1-2
+[Freerouting] Net '/SPIKE_OFF_BL' (1 unrouted connection):
+[Freerouting] - via  ->  R28-2
+[Freerouting] Net '/VPHOTO_TL' (3 unrouted connections):
+[Freerouting] - via  ->  C11-1
+[Freerouting] - C11-1  ->  TP7-1
+[Freerouting] - via  ->  U2-1
+[Freerouting] Net '/RAW_ON_TR' (2 unrouted connections):
+[Freerouting] - TP17-1  ->  via
+[Freerouting] - via  ->  U5-1
+[Freerouting] Net '/RAW_ON_TL' (2 unrouted connections):
+[Freerouting] - U4-1  ->  via
+[Freerouting] - R13-1  ->  via
+[Freerouting] Net '/VEVENT_BL' (4 unrouted connections):
+[Freerouting] - TP13-1  ->  via
+[Freerouting] - U6-6  ->  U6-3
+[Freerouting] - R15-2  ->  U6-3
+[Freerouting] - R15-2  ->  R10-1
+[Freerouting] Net '/RC_ON_TL' (1 unrouted connection):
+[Freerouting] - C23-2  ->  R17-1
+[Freerouting] Net '/VEVENT_TL' (1 unrouted connection):
+[Freerouting] - R13-2  ->  R6-1
+[Freerouting] Net '/VPHOTO_BL' (3 unrouted connections):
+[Freerouting] - C14-2  ->  via
+[Freerouting] - via  ->  C15-1
+[Freerouting] - C14-2  ->  TP9-1
+[Freerouting] Net '/Q_ON_TL' (1 unrouted connection):
+[Freerouting] - via  ->  U8-5
+[Freerouting] Net '/CX_ON_TL' (1 unrouted connection):
+[Freerouting] - via  ->  C23-1
+[Freerouting] 2026-09-27 01:27:44.652 INFO   [BEF0D7\C06536] Auto-routing stage completed: started with 150 unrouted nets, completed in 379.06 seconds, final score: 587.29 (104 unrouted and 0 violations), using 365.66 total CPU seconds, 1600.59 GB total allocated, and 753.3 MB peak heap usage.
+[Freerouting] 2026-09-27 01:27:44.754 INFO   [BEF0D7\C06536] Starting optimization on 1 thread...
+[Freerouting] 2026-09-27 01:27:44.947 INFO   [BEF0D7\C06536] Optimization stage started on board 'dfa811d146bcee6a148058d295d26a7d' with score 587.29 (104 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:27:59.127 INFO   [BEF0D7\C06536] Optimizer pass #1 on board '33309eb394ae37f4400ea229e3ddf612' was completed in 13.64 seconds with the score of 587.29 (104 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:28:12.498 INFO   [BEF0D7\C06536] Optimizer pass #2 on board '33309eb394ae37f4400ea229e3ddf612' was completed in 12.68 seconds with the score of 587.29 (104 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:28:12.685 INFO   [BEF0D7\C06536] Stopping optimizer because the improvement in this pass (0.0000%) is below the threshold (1.00%).
+[Freerouting] 2026-09-27 01:28:12.886 INFO   [BEF0D7\C06536] Optimization stage completed: started with score 587.29 (104 unrouted and 0 violations), completed in 27.74 seconds, final score: 587.29 (104 unrouted and 0 violations), using 26.89 total CPU seconds, 129.21 GB total allocated, and 524.2 MB peak heap usage.
+[Freerouting] 2026-09-27 01:28:13.060 INFO   [BEF0D7\C06536] Optimization was completed in 28.30 seconds with the score of 587.29 (104 unrouted and 0 violations).
+[Freerouting] 2026-09-27 01:28:13.142 WARN   [BEF0D7\C06536] Invalid traces after autoroute: 125 traces not 45 degree
+[Freerouting] 2026-09-27 01:28:13.146 INFO   Saving 'C:\Users\ryanh\neuromorphic_IR_hand_assembled\compact\neuromorphic-ir-sensor-compact.ses'...
+  rounds: [{'round': 1, 'unconnected': 16, 'critical': 0, 'segments': 1238, 'vias': 146}, {'round': 2, 'unconnected': 12, 'critical': 0, 'segments': 1301, 'vias': 148}, {'round': 3, 'unconnected': 12, 'critical': 0, 'segments': 1281, 'vias': 148}]
+  routed: 1301 segs 148 vias, unconnected 11, critical 0
+no size fitted
+BUILD EXIT 1
